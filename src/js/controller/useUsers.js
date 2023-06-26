@@ -22,7 +22,7 @@ export function useUsers() {
     }
   }
 
-  fetchUsers().then((fetchedUsers) => {
+  fetchUsers().then(fetchedUsers => {
     users.set(fetchedUsers)
   })
 

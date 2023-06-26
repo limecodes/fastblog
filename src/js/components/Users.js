@@ -17,7 +17,7 @@ export class Users {
   render() {
     const users = this.users.get()
 
-    users.forEach((user) => {
+    users.forEach(user => {
       this.usersRoot.appendChild(this.createUserOption(user))
     })
   }

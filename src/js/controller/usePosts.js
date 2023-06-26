@@ -63,7 +63,11 @@ export function usePosts() {
     const sortParams = direction ? { sort: 'title', order: direction } : {}
     const endpoint = userId ? `/users/${userId}/posts` : '/posts'
 
-    const newPosts = await fetchPosts(getUrl(endpoint), { page: 1, limit: MIN_POSTS_COUNT, ...sortParams })
+    const newPosts = await fetchPosts(getUrl(endpoint), {
+      page: 1,
+      limit: MIN_POSTS_COUNT,
+      ...sortParams,
+    })
     posts.set(newPosts)
   }
 

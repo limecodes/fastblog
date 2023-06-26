@@ -45,6 +45,7 @@ export function usePosts() {
     if (direction) {
       order.set(direction)
     } else {
+      order.set(null)
       resetPosts()
     }
   }
@@ -53,6 +54,7 @@ export function usePosts() {
     if (userId) {
       user.set(userId)
     } else {
+      user.set(null)
       resetPosts()
     }
   }

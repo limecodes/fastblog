@@ -9,6 +9,7 @@ html {
   --color-blue-hover: #003f6d;
   --color-light-gray: #e7e4e4;
   --color-gray: #ccc;
+  --color-dark-gray: #626262;
   box-sizing: border-box;
   font-size: 16px;
 }

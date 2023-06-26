@@ -1,0 +1,21 @@
+.player {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--color-light-gray);
+}
+
+.player p {
+  padding: var(--spacing-s);
+}
+
+.player .controls {
+  margin-bottom: 0;
+  justify-content: space-between;
+}
+
+.player button {
+  padding: var(--spacing-s);
+  border: 0;
+}

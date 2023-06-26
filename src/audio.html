@@ -11,6 +11,7 @@
 
     <link rel="preload" as="style" href="/css/reset.css" onload="this.rel='stylesheet'" />
     <link rel="preload" as="style" href="/css/main.css" onload="this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="/css/audio.css" onload="this.rel='stylesheet'" />
   </head>
   <body>
     <main>
@@ -23,24 +24,58 @@
         </ul>
       </nav>
 
-      <section class="controls audio">
-        <select id="audio-files" onchange="handleAudioSelection(this.value)">
-          <option value="">Select audio file</option>
-          <option value="new-wave-kit.ogg">New wave kit</option>
-          <option value="synth-organ.ogg">Synth organ</option>
-        </select>
+      <section id="audio-player" class="player">
+        <p>Current audio: <strong class="current-filename">new-wave-kit.ogg</strong></p>
+        <div class="controls">
+          <button class="prev-button" title="prev">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <polygon points="8 12 14 16 14 8 8 12" />
+              <line x1="3" y1="12" x2="8" y2="12" />
+            </svg>
+          </button>
+          <button class="play-button" title="play">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+          </button>
+          <button class="pause-button" title="pause">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect x="6" y="4" width="4" height="16" />
+              <rect x="14" y="4" width="4" height="16" />
+            </svg>
+          </button>
+          <button class="stop-button" title="stop">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M5 5h14v14H5V5z" />
+            </svg>
+          </button>
+          <button class="next-button" title="next">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <polygon points="16 12 10 16 10 8 16 12" />
+              <line x1="21" y1="12" x2="16" y2="12" />
+            </svg>
+          </button>
+        </div>
       </section>
     </main>
+    <script type="module" src="/js/audio.js"></script>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope)
-          }, function(err) {
-            console.log('ServiceWorker registration failed: ', err)
-          })
-        })
-      }
+      // if ('serviceWorker' in navigator) {
+      //   window.addEventListener('load', function() {
+      //     navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      //       console.log('ServiceWorker registration successful with scope: ', registration.scope)
+      //     }, function(err) {
+      //       console.log('ServiceWorker registration failed: ', err)
+      //     })
+      //   })
+      // }
     </script>
     <noscript>
       <p>JavaScript is required to view this site.</p>

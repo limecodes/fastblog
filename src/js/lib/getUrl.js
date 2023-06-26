@@ -1,7 +1,7 @@
 const SERVER_BASE = 'https://jsonplaceholder.typicode.com'
 
 // minimum number of posts to fetch to fill page
-const MIN_POSTS_COUNT = 3
+export const MIN_POSTS_COUNT = 3
 
 /*
  * Returns the url object for the given endpoint

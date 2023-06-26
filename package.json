@@ -1,5 +1,5 @@
 {
-  "name": "FastBlog",
+  "name": "fastblog",
   "version": "1.0.0",
   "description": "A demonstration to write a fast loading blog",
   "main": "index.js",

@@ -25,7 +25,10 @@
       </nav>
 
       <section id="audio-player" class="player">
-        <p>Current audio: <strong class="current-filename">new-wave-kit.ogg</strong></p>
+        <div class="info">
+          <p>Current audio: <strong class="current-filename">new-wave-kit.ogg</strong></p>
+          <progress id="progress" value="0" max="100"></progress>
+        </div>
         <div class="controls">
           <button class="prev-button" title="prev">
             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -44,18 +47,6 @@
               <rect x="14" y="4" width="4" height="16" />
             </svg>
           </button>
-          <button class="stop-button" title="stop">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M5 5h14v14H5V5z" />
-            </svg>
-          </button>
           <button class="next-button" title="next">
             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <polygon points="16 12 10 16 10 8 16 12" />
@@ -67,15 +58,15 @@
     </main>
     <script type="module" src="/js/audio.js"></script>
     <script>
-      // if ('serviceWorker' in navigator) {
-      //   window.addEventListener('load', function() {
-      //     navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-      //       console.log('ServiceWorker registration successful with scope: ', registration.scope)
-      //     }, function(err) {
-      //       console.log('ServiceWorker registration failed: ', err)
-      //     })
-      //   })
-      // }
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope)
+          }, function(err) {
+            console.log('ServiceWorker registration failed: ', err)
+          })
+        })
+      }
     </script>
     <noscript>
       <p>JavaScript is required to view this site.</p>

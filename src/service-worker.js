@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v1'
+const CACHE_NAME = 'v2'
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
@@ -19,6 +19,8 @@ const URLS_TO_CACHE = [
   '/js/lib/getUrl.js',
   '/js/audio.js',
   '/js/posts.js',
+  '/audio/new-wave-kit.ogg',
+  '/audio/synth-organ.ogg',
 ]
 
 self.addEventListener('install', event => {

@@ -29,6 +29,16 @@ export function usePosts() {
     return await fetchPaginated(urlObject)
   }
 
+  async function fetchNextPosts() {
+    if (nextLink.get()) {
+      const newPosts = await fetchPosts(nextLink.get())
+
+      if (newPosts.length) {
+        posts.set((prevPosts) => [...prevPosts, ...newPosts])
+      }
+    }
+  }
+
   fetchPosts(nextLink.get()).then(paginatedPosts => {
     posts.set(paginatedPosts)
   })
@@ -37,5 +47,6 @@ export function usePosts() {
     posts,
     loading,
     error,
+    fetchNextPosts,
   }
 }

@@ -2,7 +2,7 @@ import { PostsList } from './components/PostsList.js'
 import { usePosts } from './controller/usePosts.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const { posts } = usePosts()
+  const { posts, fetchNextPosts } = usePosts()
 
-  new PostsList(posts)
+  new PostsList(posts, fetchNextPosts)
 })

@@ -1,0 +1,20 @@
+{
+  "name": "FastBlog",
+  "version": "1.0.0",
+  "description": "A demonstration to write a fast loading blog",
+  "main": "index.js",
+  "repository": "git@github.com:limecodes/fastblog.git",
+  "author": "Yan Shcherbakov",
+  "license": "Private",
+  "private": true,
+  "scripts": {
+    "start": "http-server ./src -p 3001",
+    "lint": "eslint src --ext .js",
+    "format": "prettier --write src"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "http-server": "^14.1.1",
+    "prettier": "^2.8.8"
+  }
+}

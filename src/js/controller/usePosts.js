@@ -1,6 +1,7 @@
 import { createState } from '../lib/createState.js'
 import { getUrl, MIN_POSTS_COUNT } from '../lib/getUrl.js'
 import { fetchPaginated } from '../lib/fetchPaginated.js'
+import DataCache from '../lib/cache.js'
 
 export function usePosts() {
   const posts = createState([])
@@ -12,13 +13,21 @@ export function usePosts() {
   const nextLink = createState(getUrl('/posts'))
 
   async function fetchPosts(urlObject) {
+    const cacheHit = await DataCache.has(urlObject)
+
     loading.set(true)
 
-    const { posts: paginatedPosts, next } = await fetchFromNetwork(urlObject)
+    const fetchMethod = cacheHit ? fetchFromCache : fetchFromNetwork
+    const { posts: paginatedPosts, next } = await fetchMethod(urlObject)
 
     if (paginatedPosts.length) {
       loading.set(false)
       nextLink.set(next ? new URL(next) : null)
+
+      DataCache.set(urlObject, {
+        posts: paginatedPosts,
+        next,
+      })
 
       return paginatedPosts
     } else {
@@ -29,6 +38,15 @@ export function usePosts() {
 
   async function fetchFromNetwork(urlObject) {
     return await fetchPaginated(urlObject)
+  }
+
+  async function fetchFromCache(urlObject) {
+    try {
+      return await DataCache.get(urlObject)
+    } catch (error) {
+      console.error('Could not fetch from cache', error)
+      return []
+    }
   }
 
   async function fetchNextPosts() {

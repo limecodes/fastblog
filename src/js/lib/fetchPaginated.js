@@ -29,12 +29,12 @@ export async function fetchPaginated(urlObject) {
  * @param {String} linkHeader - The link header from the API
  * @return {Object} - The parsed link header
  */
-function parseLinkHeader() {
+function parseLinkHeader(linkHeader) {
   // JSON Placeholder API gives unsecure links in Link header
   // so we need to make sure we use the same protocol as the current page
   const currentProtocol = window.location.protocol
 
-  return parseLinkHeader.split(', ').reduce((acc, link) => {
+  return linkHeader.split(', ').reduce((acc, link) => {
     const match = link.match(/<(.*)>; rel="(.*)"/)
 
     if (match) {
@@ -47,5 +47,7 @@ function parseLinkHeader() {
       // to IndexedDB and URL object is not supported there
       acc[rel] = url.toString()
     }
-  })
+
+    return acc
+  }, {})
 }

@@ -11,13 +11,13 @@ export function usePosts() {
 
   async function fetchPosts(urlObject) {
     loading.set(true)
-    
+
     const { posts: paginatedPosts, next } = await fetchFromNetwork(urlObject)
 
     if (paginatedPosts.length) {
       loading.set(false)
       nextLink.set(next ? new URL(next) : null)
-      
+
       return paginatedPosts
     } else {
       loading.set(false)
@@ -29,7 +29,7 @@ export function usePosts() {
     return await fetchPaginated(urlObject)
   }
 
-  fetchPosts(nextLink.get()).then((paginatedPosts) => {
+  fetchPosts(nextLink.get()).then(paginatedPosts => {
     posts.set(paginatedPosts)
   })
 

@@ -12,6 +12,7 @@
     <link rel="preload" as="style" href="/css/reset.css" onload="this.rel='stylesheet'" />
     <link rel="preload" as="style" href="/css/main.css" onload="this.rel='stylesheet'" />
     <link rel="preload" as="style" href="/css/posts.css" onload="this.rel='stylesheet'" />
+    <link rel="modulepreload" href="/js/posts.js" as="script" onload="this.rel='script'" />
   </head>
   <body>
     <main>
@@ -36,16 +37,9 @@
       </section>
       <section id="posts" class="content">
         <p>Loading posts...</p>
-        <article class="post">
-          <h2 class="post-title">Post Title</h2>
-          <p class="post-author">By: <strong>User One</strong></p>
-          <p class="body">
-            quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet
-            architecto
-          </p>
-        </article>
       </section>
     </main>
+    <script type="module" src="/js/posts.js"></script>
     <noscript>
       <p>JavaScript is required to view this site.</p>
     </noscript>

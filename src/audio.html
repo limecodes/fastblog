@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fast Blog | Audio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Demonstration to create a fast loading blog" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <link rel="preload" as="style" href="/css/reset.css" onload="this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="/css/main.css" onload="this.rel='stylesheet'" />
+  </head>
+  <body>
+    <main>
+      <h1>Audio</h1>
+      <nav>
+        <ul>
+          <li><a href="/" title="home">Home</a></li>
+          <li><a href="/posts.html" title="Blog posts">Posts</a></li>
+          <li><a href="/audio.html" title="Audio files">Audio</a></li>
+        </ul>
+      </nav>
+
+      <section class="controls audio">
+        <select id="audio-files" onchange="handleAudioSelection(this.value)">
+          <option value="">Select audio file</option>
+          <option value="new-wave-kit.ogg">New wave kit</option>
+          <option value="synth-organ.ogg">Synth organ</option>
+        </select>
+      </section>
+    </main>
+    <noscript>
+      <p>JavaScript is required to view this site.</p>
+    </noscript>
+  </body>
+</html>

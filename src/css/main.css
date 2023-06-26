@@ -1,0 +1,100 @@
+html {
+  --content-width: 700px;
+  --spacing-s: 12px;
+  --spacing-m: 24px;
+  --spacing-l: 48px;
+  --color-text: #333;
+  --color-background: #f9f9f9;
+  --color-blue: #005a9c;
+  --color-blue-hover: #003f6d;
+  --color-light-gray: #e7e4e4;
+  --color-gray: #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+}
+
+h1,
+h2 {
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.375em;
+}
+
+main {
+  max-width: var(--content-width);
+  margin: var(--spacing-m) auto var(--spacing-l);
+  padding: 0 var(--spacing-s);
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-blue-hover);
+}
+
+p {
+  margin-top: 0;
+}
+
+p + p {
+  margin-top: var(--spacing-s);
+}
+
+strong {
+  font-weight: bold;
+}
+
+nav {
+  margin-bottom: var(--spacing-m);
+  border-top: 1px solid var(--color-gray);
+  border-bottom: 1px solid var(--color-gray);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-s);
+}
+
+nav ul li {
+  padding: var(--spacing-s);
+}
+
+.controls {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: var(--spacing-s);
+  margin-bottom: var(--spacing-s);
+}
+
+.controls.audio {
+  justify-content: left;
+}

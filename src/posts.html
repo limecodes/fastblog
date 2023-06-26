@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fast Blog | Blog Posts</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Demonstration to create a fast loading blog" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <link rel="preload" as="style" href="/css/reset.css" onload="this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="/css/main.css" onload="this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="/css/posts.css" onload="this.rel='stylesheet'" />
+  </head>
+  <body>
+    <main>
+      <h1>Blog Posts</h1>
+      <nav>
+        <ul>
+          <li><a href="/" title="home">Home</a></li>
+          <li><a href="/posts.html" title="Blog posts">Posts</a></li>
+          <li><a href="/audio.html" title="Audio files">Audio</a></li>
+        </ul>
+      </nav>
+      <section class="controls">
+        <select id="sort-posts">
+          <option value="">Sort posts</option>
+          <option value="asc">By title asc</option>
+          <option value="desc">By title desc</option>
+        </select>
+        <select id="filter-users">
+          <option value="">Select user</option>
+        </select>
+        <button id="reset-filters">Reset filters</button>
+      </section>
+      <section id="posts" class="content">
+        <p>Loading posts...</p>
+        <article class="post">
+          <h2 class="post-title">Post Title</h2>
+          <p class="post-author">By: <strong>User One</strong></p>
+          <p class="body">quia et suscipit
+            suscipit recusandae consequuntur expedita et cum
+            reprehenderit molestiae ut ut quas totam
+            nostrum rerum est autem sunt rem eveniet architecto</p>
+        </article>
+      </section>
+    </main>
+    <noscript>
+      <p>JavaScript is required to view this site.</p>
+    </noscript>
+  </body>
+</html>

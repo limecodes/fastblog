@@ -1,0 +1,27 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-light-gray);
+    border-bottom: 1px solid var(--color-light-gray);
+    padding-top: var(--spacing-s);
+    padding-bottom: var(--spacing-s);
+  }
+  
+  .post-title {
+    letter-spacing: 2px;
+  }
+  
+  .post-author {
+    border-left: 3px solid var(--color-blue);
+    padding-left: var(--spacing-s);
+  }
+  
+  .post-body {
+    line-height: var(--spacing-m);
+  }
+  
+  .post-more-by-user {
+    margin-top: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+    align-self: flex-end;
+  }

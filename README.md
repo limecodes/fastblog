@@ -2,7 +2,7 @@
 Building a fast loading blog
 
 ## Running this application
-*tl;dr*: `yarn && yarn start` or `npm install && npm run start` or [follow this link](https://netlify.com)
+*tl;dr*: `yarn && yarn start` or `npm install && npm run start` or [follow this link](https://poetic-duckanoo-53e285.netlify.app/)
 
 You can run the blog in the following ways:
 
@@ -24,7 +24,7 @@ However, you don't need to install the dev dependencies if you choose not to. An
 
 *Netlify*
 If you don't have the pre-requisites to run the application locally,
-you can simply view the application on [this netlify link](https://netlify.com)
+you can simply view the application on [this netlify link](https://poetic-duckanoo-53e285.netlify.app/)
 
 ## Browser Compatibility
 *tl;dr*: Works on Chrome & Firefox up to versions Chrome 61 && Firefox 60
